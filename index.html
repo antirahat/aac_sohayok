@@ -4,40 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <div class="container">
+        <div class="loading">
+            <div class="progress"></div>
+        </div>
         <!-- Sidebar -->
         <div class="sidebar">
             <div class="user-info">
-                <img src="assets/user-profile.png" alt="User Profile" class="profile-pic">
+                <img src="assets/media/user-profile.png" alt="User Profile" class="profile-pic">
                 <div>
                     <h2>আব্দুর রহিম</h2>
                     <p>বয়স: ২৪ - পুরুষ</p>
                 </div>
             </div>
             <div class="meal-options">
-                <input type="checkbox" name="meal" value="breakfast">
-                <label>
-                    
-                    Breakfast
-                </label> <br>
-                <input type="checkbox" name="meal" value="lunch">
-                <label>
-                    
-                    Lunch
-                </label> <br>
-                <input type="checkbox" name="meal" value="snacks">
-                <label>
-                    
-                    Snacks
-                </label> <br>
-                <input type="checkbox" name="meal" value="dinner">
-                <label>
-                    
-                    Dinner
-                </label>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="breakfast">
+                        Breakfast
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="lunch">
+                        Lunch
+                    </label>
+                </div>                
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="snacks">
+                        Snacks
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="dinner">
+                        Dinner
+                    </label>
+                </div>
             </div>
         </div>
 
@@ -68,23 +75,23 @@
 
             <div class="symptoms-section">
                 <div class="symptom-item">
-                    <img src="assets/fever.png" alt="Fever">
+                    <img src="assets/media/fever.png" alt="Fever">
                     <p>জ্বর</p>
                 </div>
                 <div class="symptom-item">
-                    <img src="assets/stomach-ache.png" alt="Stomach Ache">
+                    <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
                     <p>পেট ব্যাথা</p>
                 </div>
                 <div class="symptom-item">
-                    <img src="assets/cough.png" alt="Cough">
+                    <img src="assets/media/cough.png" alt="Cough">
                     <p>কাশি</p>
                 </div>
                 <div class="symptom-item">
-                    <img src="assets/eye-problem.png" alt="Eye Problem">
+                    <img src="assets/media/eye-problem.png" alt="Eye Problem">
                     <p>দূরদৃষ্টি</p>
                 </div>
                 <div class="symptom-item">
-                    <img src="doctor.png" alt="Consult Doctor">
+                    <img src="assets/media/doctor.png" alt="Consult Doctor">
                     <p>ডাক্তারের ডাকুন</p>
                 </div>
                 <!-- Add more symptom items as needed -->
@@ -104,4 +111,5 @@
         </div>
     </div>
 </body>
+<script src="assets/js/script.js"></script>
 </html>
