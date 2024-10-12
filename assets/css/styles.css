@@ -10,6 +10,44 @@ body {
     color: #fff;
 }
 
+.pain-scale-part {
+    width: 0;
+    height: 0;
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+.main-scale {
+    width: auto;
+    height: auto;
+    padding: 30px;
+    background-color: white;
+}
+
+.cross-button {
+    margin-bottom: 10px;
+    text-align: right;
+    color: black;    
+}
+
+.cross-button span {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.scale-item {
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     height: 100vh;
@@ -25,6 +63,7 @@ body {
     cursor: pointer;    
     position: absolute;
     transform: translate(-100%, -100%);
+    z-index: 20;
 }
 
 .loading .progress {

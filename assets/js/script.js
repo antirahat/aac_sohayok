@@ -8,14 +8,14 @@ function loading_function(event) {
     loading.style.left = event.clientX + "px" ;
 }
 
-function loading_enter_function() {
+function loading_enter_function(callback) {
     intervalId = setInterval(function() {
         if (progress_value < 100) {
             progress_value += 20;
             progress.style.width = progress_value + "%";            
         } else {
             clearInterval(intervalId);
-            // alert('Progress completed!');
+            callback() ;
         }
     }, 1000);
 }
@@ -28,13 +28,54 @@ function loading_leave_function() {
     clearTimeout(intervalId) ;
 }
 
+function pain_scale_function() {
+    var scale = document.getElementsByClassName("pain-scale-part")[0].style ;
+    scale.width = "100%" ;
+    scale.height = "100%" ;
+}
+
+function audio_play_function(path) {
+    let audio = new Audio("assets/media/audio-"+path+".mp3");
+    console.log("assets/media/audio-"+path+".mp3") ;
+    audio.play();
+}
+
+function close_pain_scale_function() {
+    var scale = document.getElementsByClassName("pain-scale-part")[0].style ;
+    scale.width = "0" ;
+    scale.height = "0" ;
+}
+
+
 var symptom = document.querySelectorAll(".symptom-item") ;
 
 symptom.forEach((item) => {
-    item.addEventListener("mouseenter", loading_enter_function)
-    item.addEventListener("mousemove", loading_function)
-    item.addEventListener("mouseleave", loading_leave_function)
+    item.addEventListener("mouseenter", () => {
+        loading_enter_function(pain_scale_function);
+    });
+    item.addEventListener("mousemove", loading_function) ;
+    item.addEventListener("mouseleave", loading_leave_function) ;
 });
+
+var scale = document.querySelectorAll(".scale-item") ;
+
+scale.forEach((item,index) => {
+    item.addEventListener("mouseenter", () => {
+        loading_enter_function(() => audio_play_function(index+1));
+    });
+    item.addEventListener("mousemove", loading_function) ;
+    item.addEventListener("mouseleave", loading_leave_function) ;
+});
+
+var pain_div = document.getElementsByClassName("pain-cross")[0] ;
+pain_div.addEventListener("mouseenter", () => {
+    loading_enter_function(close_pain_scale_function);
+});
+pain_div.addEventListener("mousemove", loading_function) ;
+pain_div.addEventListener("mouseleave", loading_leave_function) ;
+
+
+
 
 // document.getElementsByClassName("symptom-item")[0].addEventListener("mouseenter", loading_enter_function)
 // document.getElementsByClassName("symptom-item")[0].addEventListener("mousemove", loading_function)
