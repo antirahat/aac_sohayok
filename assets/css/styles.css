@@ -53,6 +53,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    z-index: 5;
 }
 
 .loading {    
@@ -119,17 +120,29 @@ body {
     margin-bottom:20px;
     font-size: 22px;
     padding: 5px;
-    /* border: 2px solid black; */
+    cursor: pointer;
 }
 
 .meal-options input{
     width: 20px;
-    height: 20px;    
+    height: 20px;
+    accent-color: rgba(0,255,0,1);
 }
 
-/* .meal-options input:checked {
-    background: green;    
-} */
+.customize-meal-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customize-meal-option input {
+    flex: 1;
+    outline: 0;
+}
+
+.customize-meal-option button {
+    flex: 1;    
+}
 
 /* Main Content */
 .main-content {
@@ -167,20 +180,36 @@ body {
     cursor: pointer;
 }
 
+.menu-item:hover {
+    background-color: #1565c0;
+}
+
+.active {
+    background-color: #00a046;
+}
+
 .menu-item h3 {
     font-size: 16px;
 }
 
+/* .section {
+    padding: 5px;
+} */
+
 /* Symptoms Section */
-.symptoms-section {
-    display: flex ;
+.section-item {
+    display: none ;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 30px;        
 }
 
-.symptom-item {
+.section-item:nth-child(2) {
+    display: flex;
+}
+
+.section-item-items {
     text-align: center;
     aspect-ratio: 1/1;
     flex: 1 1 20%;
@@ -192,7 +221,7 @@ body {
     cursor: pointer;
 }
 
-.symptom-item:hover {
+.section-item-items:hover {
     box-shadow: 0 0 10px rgba(255, 255, 255, 1);
 }
 
@@ -210,12 +239,12 @@ body {
     background-color: red;
 } */
 
-.symptom-item img {
+.section-item-items img {
     width: 50px;
     height: auto;
 }
 
-.symptom-item p {
+.section-item-items {
     margin-top: 10px;
     font-size: 16px;
 }
@@ -238,6 +267,7 @@ body {
 
 .actions-section button:hover {
     background-color: #1565c0;
+    color: white;
 }
 
 /* Chat Button */
@@ -258,4 +288,84 @@ body {
 
 .chat-button button:hover {
     background-color: #00a046;
+}
+
+.active {
+    background-color: green;
+}
+
+.chat-part {
+    width: 20%;
+    height: 0px;
+    transition: 0.5s ease-in-out;
+    position: absolute;
+    background-color: green;
+    bottom: 30px;
+    right: 100px;
+    border-radius: 20px;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    overflow: hidden;  
+}
+
+.chat-main {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.chat-profile {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-profile img {
+    width: 30px;    
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+}
+
+.cross {
+    width: 100%;
+    text-align: right;
+    cursor: pointer;
+}
+
+.chat-message {
+    width: 100%;
+    height: 80%; 
+}
+
+.chat-input {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.chat-input input {
+    outline: 0px;
+    border: 0px;
+    width: 80%;
+    height: 100%;
+    padding-left: 10px;
+}
+
+.chat-input button {
+    width: 20%;
+    height: 100%;
+    background-color: #fff;
+    border: 0px;
 }

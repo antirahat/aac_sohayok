@@ -22,6 +22,20 @@
             </div>
         </div>
     </div>
+    <div class="chat-part">
+        <div class="chat-main">
+            <span class="cross" onclick="chat_close_function()">x</span>
+            <div class="chat-profile">
+                <img src="assets/media/user-profile.png" alt="User">
+                <span>আব্দুর রহিম</span>
+            </div>
+            <div class="chat-message"></div>
+            <div class="chat-input">
+                <input type="text">
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
@@ -36,27 +50,31 @@
                 <div class="option">
                     <label>
                         <input type="checkbox" name="meal" value="breakfast">
-                        Breakfast
+                        সকালের খাবার
                     </label>
                 </div>
                 <div class="option">
                     <label>
                         <input type="checkbox" name="meal" value="lunch">
-                        Lunch
+                        দুপুরের খাবার
                     </label>
                 </div>                
                 <div class="option">
                     <label>
                         <input type="checkbox" name="meal" value="snacks">
-                        Snacks
+                        জলখাবার
                     </label>
                 </div>
                 <div class="option">
                     <label>
                         <input type="checkbox" name="meal" value="dinner">
-                        Dinner
+                        রাতের খাবার
                     </label>
                 </div>
+            </div>
+            <div class="customize-meal-option">
+                <input type="text" id="custom-meal">
+                <button onclick="create_meal_option_function()">+</button>
             </div>
         </div>
 
@@ -84,42 +102,69 @@
                     <h3>অল্টার ব্যবহৃত</h3>
                 </div>
             </div>
-
-            <div class="symptoms-section">
-                <div class="symptom-item">
-                    <img src="assets/media/fever.png" alt="Fever">
-                    <p>জ্বর</p>
-                </div>
-                <div class="symptom-item">
-                    <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
-                    <p>পেট ব্যাথা</p>
-                </div>
-                <div class="symptom-item">
-                    <img src="assets/media/cough.png" alt="Cough">
-                    <p>কাশি</p>
-                </div>
-                <div class="symptom-item">
-                    <img src="assets/media/eye-problem.png" alt="Eye Problem">
-                    <p>দূরদৃষ্টি</p>
-                </div>
-                <div class="symptom-item">
-                    <img src="assets/media/doctor.png" alt="Consult Doctor">
-                    <p>ডাক্তারের ডাকুন</p>
-                </div>
+            <div class="section">
+                <div class="symptoms-section section-item">
+                    <div class="symptom-item section-item-items">
+                        <img src="assets/media/fever.png" alt="Fever">
+                        <p>জ্বর</p>
+                    </div>
+                    <div class="symptom-item section-item-items">
+                        <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
+                        <p>পেট ব্যাথা</p>
+                    </div>
+                    <div class="symptom-item section-item-items">
+                        <img src="assets/media/cough.png" alt="Cough">
+                        <p>কাশি</p>
+                    </div>
+                    <div class="symptom-item section-item-items">
+                        <img src="assets/media/eye-problem.png" alt="Eye Problem">
+                        <p>দূরদৃষ্টি</p>
+                    </div>
+                    <div class="symptom-item section-item-items">
+                        <img src="assets/media/doctor.png" alt="Consult Doctor">
+                        <p>ডাক্তারের ডাকুন</p>
+                    </div>
                 <!-- Add more symptom items as needed -->
+                </div>
+                <div class="feelings-section section-item">
+                    <div class="feeling-item section-item-items">
+                        <img src="assets/media/fever.png" alt="Fever">
+                        <p>জ্বর</p>
+                    </div>
+                    <div class="feeling-item section-item-items">
+                        <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
+                        <p>পেট ব্যাথা</p>
+                    </div>
+                    <div class="feeling-item section-item-items">
+                        <img src="assets/media/cough.png" alt="Cough">
+                        <p>কাশি</p>
+                    </div>
+                    <div class="feeling-item section-item-items">
+                        <img src="assets/media/eye-problem.png" alt="Eye Problem">
+                        <p>দূরদৃষ্টি</p>
+                    </div>
+                    <div class="feeling-item section-item-items">
+                        <img src="assets/media/doctor.png" alt="Consult Doctor">
+                        <p>ডাক্তারের ডাকুন</p>
+                    </div>
+                </div>
+                <div class="foods-section section-item">
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure unde exercitationem animi excepturi praesentium explicabo, incidunt doloremque sed atque eveniet, alias distinctio voluptatum a error enim magnam esse veritatis. Odit repudiandae hic ex repellendus, nemo, esse ut dignissimos officia dolorum perferendis cupiditate quas, repellat laudantium non architecto itaque deleniti quia quisquam rem dolorem! Architecto dolorum omnis libero nihil quibusdam eveniet soluta distinctio. Corrupti laboriosam earum iste doloremque, quis a deleniti autem nostrum accusantium odit provident blanditiis, ad ex repellendus modi consequuntur illum necessitatibus nam quisquam doloribus! Expedita delectus rerum deleniti provident laboriosam mollitia, perferendis fugiat laudantium aut. Eveniet, at eos.
+                </div>
             </div>
 
             <div class="actions-section">
-                <button>আমি পানি খেতে চাই</button>
-                <button>আমি বাইরে যেতে চাই</button>
-                <button>গান শুনতে চাই</button>
-                <button>গেম খেলতে চাই</button>
+                <button class="action-item">আমি পানি খেতে চাই</button>
+                <button class="action-item">আমি বাইরে যেতে চাই</button>
+                <button class="action-item">আমি গান শুনতে চাই</button>
+                <button class="action-item">আমি গেম খেলতে চাই</button>
+                <button class="action-item">আমি খাবার খেতে চাই</button>
             </div>
         </div>
 
         <!-- Chat Button -->
         <div class="chat-button">
-            <button>Chat</button>
+            <button onclick="chat_open_function()">Chat</button>
         </div>
     </div>
 </body>
