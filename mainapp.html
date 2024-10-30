@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Dashboard</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="loading">
+        <div class="progress"></div>
+    </div>
+    <div class="pain-scale-part">
+        <div class="main-scale">
+            <div class="cross-button"><span class="pain-cross"><i class="fa-solid fa-xmark"></i></span></div>
+            <div class="scale-part">
+                <img class="scale-item" src="assets/media/scale-1.png" alt="">
+                <img class="scale-item" src="assets/media/scale-2.png" alt="">
+                <img class="scale-item" src="assets/media/scale-3.png" alt="">
+                <img class="scale-item" src="assets/media/scale-4.png" alt="">
+                <img class="scale-item" src="assets/media/scale-5.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="chat-part">
+        <div class="chat-main">
+            <div class="chat-header">                
+                <div class="chat-profile">
+                    <img src="assets/media/user-profile.png" alt="User">
+                    <span>আব্দুর রহিম</span>
+                </div>
+                <span class="cross" onclick="chat_close_function()"><i class="fa-solid fa-xmark"></i></span>
+            </div>
+            <div class="chat-message">
+                <div class="message">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <div class="message-body">
+                        Hello, Cisco IUT Hackathon.
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <div class="message-body">
+                        How can I help you?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text">
+                <button><i class="fa-regular fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="user-info" onclick="all_profile_loadFunction()">
+                <img src="assets/media/user-profile.png" alt="User Profile" class="profile-pic">
+                <div>
+                    <h2>আব্দুর রহিম</h2>
+                    <p>বয়স: ২৪ - পুরুষ</p>
+                </div>
+            </div>
+            <div class="meal-options">
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="breakfast">
+                        সকালের খাবার
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="lunch">
+                        দুপুরের খাবার
+                    </label>
+                </div>                
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="snacks">
+                        জলখাবার
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" name="meal" value="dinner">
+                        রাতের খাবার
+                    </label>
+                </div>
+            </div>
+            <div class="customize-meal-option">
+                <input type="text" id="custom-meal">
+                <button onclick="create_meal_option_function()">+</button>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="header">
+                <h1>স্বাগতম, আব্দুর রহিম 👋</h1>
+                <input type="text" placeholder="Search task, project">
+            </div>
+
+            <div class="menu-section">
+                <div class="menu-item blue">
+                    <h3>চিকিৎসা সংক্রান্ত</h3>
+                </div>
+                <div class="menu-item blue">
+                    <h3>অনুভূতি প্রকাশ</h3>
+                </div>
+                <div class="menu-item blue">
+                    <h3>দিকনির্দেশনা</h3>
+                </div>
+                <div class="menu-item blue">
+                    <h3>খাবার খাওয়া</h3>
+                </div>
+                <div class="menu-item blue">
+                    <h3>অধিক ব্যবহৃত</h3>
+                </div> 
+            </div>
+            <div class="main-section">
+                <div class="section">
+                    <div class="symptoms-section section-item">
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/fever.png" alt="Fever">
+                            <p>জ্বর</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
+                            <p>পেট ব্যাথা</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/cough.png" alt="Cough">
+                            <p>কাশি</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/eye-problem.png" alt="Eye Problem">
+                            <p>দূরদৃষ্টি</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/fever.png" alt="Fever">
+                            <p>জ্বর</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
+                            <p>পেট ব্যাথা</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/cough.png" alt="Cough">
+                            <p>কাশি</p>
+                        </div>
+                        <div class="symptom-item section-item-items">
+                            <img src="assets/media/eye-problem.png" alt="Eye Problem">
+                            <p>দূরদৃষ্টি</p>
+                        </div>                    
+                        
+                    <!-- Add more symptom items as needed -->
+                    </div>
+                    <div class="feelings-section section-item">
+                        <div class="feeling-item section-item-items">
+                            <img src="assets/media/hungry.png" alt="Fever">
+                            <p>ক্ষুধার্ত</p>
+                        </div>
+                        <div class="feeling-item section-item-items">
+                            <img src="assets/media/sleep.png" alt="Stomach Ache">
+                            <p>ঘুম</p>
+                        </div>
+                        <div class="feeling-item section-item-items">
+                            <img src="assets/media/washroom.png" alt="Cough">
+                            <p>ওয়াশরুম</p>
+                        </div>
+                        <div class="feeling-item section-item-items">
+                            <img src="assets/media/mood.png" alt="Eye Problem">
+                            <p>মেজাজ</p>
+                        </div>
+                        <div class="feeling-item section-item-items">
+                            <img src="assets/media/rest.png" alt="Consult Doctor">
+                            <p>বিশ্রাম</p>
+                        </div>
+                    </div>
+                    <div class="foods-section section-item">
+                        Working Process
+                    </div>
+                </div>
+                <div class="emergency-section">
+                    <div class="emergency-section-item">
+                        <img src="assets/media/doctor.png" alt="Consult Doctor">
+                        <p>ডাক্তারের ডাকুন</p>
+                    </div>
+                    <div class="emergency-section-item">
+                        <img src="assets/media/doctor.png" alt="Consult Doctor">
+                        <p>Nurse ডাকুন</p>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="actions-section">
+                <button class="action-item">আমি পানি খেতে চাই</button>
+                <button class="action-item">আমি বাইরে যেতে চাই</button>
+                <button class="action-item">আমি গান শুনতে চাই</button>
+                <button class="action-item">আমি গেম খেলতে চাই</button>
+                <button class="action-item">আমি খাবার খেতে চাই</button>
+            </div>
+        </div>
+
+        <!-- Chat Button -->
+        <div class="chat-button">
+            <button onclick="chat_open_function()">Chat</button>
+        </div>
+    </div>
+    <div class="profile">
+        <div class="profile-body">
+            <div class="all-profile-body">
+                <div class="user-profile" onclick="user_profile_loadFunction()">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <p>User One</p>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <p>User Two</p>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/media/add-user.png" alt="">
+                    <p>Add User</p>
+                </div>
+            </div>
+            <div class="user-profile-body">
+                <img src="assets/media/user-profile.png" alt="">
+                <div class="info">
+                    <p><span>Name: </span>User One</p>
+                    <p><span>Age: </span>20</p>
+                    <p><span>Type: </span>Hemiplegia - Cerebral Palsy</p>
+                    <p><span>GMFCS: </span>IV</p>
+                    <p><span>MACS: </span>II</p>
+                    <p><span>Associated Impairement: </span>Speech</p>
+                </div>
+            </div>
+            <img class="profile-cross-button" src="assets/media/cross.png" onclick="all_profile_closeFunction()">
+        </div>        
+    </div>
+    <div class="emergency-part" onclick="emergency_closeFunction()">
+        <div class="emergency-body">
+            <i class="fa-solid fa-phone-volume"></i>
+            Calling...
+        </div>
+    </div>
+</body>
+<script src="assets/js/script.js"></script>
+</html>

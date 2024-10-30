@@ -206,6 +206,27 @@ function user_profile_loadFunction() {
     document.getElementsByClassName("user-profile-body")[0].style.maxHeight = "450px" ;
 }
 
+function emergency_loadFunction() {
+    document.getElementsByClassName("emergency-part")[0].style.transform = "translate(0%, 0%)";
+}
+
+function emergency_closeFunction() {
+    document.getElementsByClassName("emergency-part")[0].style.transform = "translate(-100%, -100%)";
+}
+
+var emergency = document.querySelectorAll(".emergency-section-item") ;
+
+emergency.forEach((item,index) => {
+    item.addEventListener("mouseenter", () => {
+        loading_enter_function(() => emergency_loadFunction());
+    });
+    item.addEventListener("mousemove", loading_function) ;
+    item.addEventListener("mouseleave", loading_leave_function) ;
+    item.addEventListener("click", () => {
+        emergency_loadFunction();
+    });
+});
+
 // speak()
 // document.getElementsByClassName("symptom-item")[0].addEventListener("mouseenter", loading_enter_function)
 // document.getElementsByClassName("symptom-item")[0].addEventListener("mousemove", loading_function)
