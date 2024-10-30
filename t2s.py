@@ -14,7 +14,7 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)  # Choose voice (0: Male, 1: Female)
 
 # Input text to be spoken
-text = "width"
+text = "khankirpola"
 
 # Convert text to speech
 engine.say(text)

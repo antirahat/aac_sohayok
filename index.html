@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Health Dashboard</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="loading">
@@ -24,22 +26,37 @@
     </div>
     <div class="chat-part">
         <div class="chat-main">
-            <span class="cross" onclick="chat_close_function()">x</span>
-            <div class="chat-profile">
-                <img src="assets/media/user-profile.png" alt="User">
-                <span>আব্দুর রহিম</span>
+            <div class="chat-header">                
+                <div class="chat-profile">
+                    <img src="assets/media/user-profile.png" alt="User">
+                    <span>আব্দুর রহিম</span>
+                </div>
+                <span class="cross" onclick="chat_close_function()"><i class="fa-solid fa-xmark"></i></span>
             </div>
-            <div class="chat-message"></div>
+            <div class="chat-message">
+                <div class="message">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <div class="message-body">
+                        Hello, Cisco IUT Hackathon.
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <div class="message-body">
+                        How can I help you?
+                    </div>
+                </div>
+            </div>
             <div class="chat-input">
                 <input type="text">
-                <button>Send</button>
+                <button><i class="fa-regular fa-paper-plane"></i></button>
             </div>
         </div>
     </div>
     <div class="container">
         <!-- Sidebar -->
         <div class="sidebar">
-            <div class="user-info">
+            <div class="user-info" onclick="all_profile_loadFunction()">
                 <img src="assets/media/user-profile.png" alt="User Profile" class="profile-pic">
                 <div>
                     <h2>আব্দুর রহিম</h2>
@@ -128,24 +145,24 @@
                 </div>
                 <div class="feelings-section section-item">
                     <div class="feeling-item section-item-items">
-                        <img src="assets/media/fever.png" alt="Fever">
-                        <p>জ্বর</p>
+                        <img src="assets/media/hungry.png" alt="Fever">
+                        <p>ক্ষুধার্ত</p>
                     </div>
                     <div class="feeling-item section-item-items">
-                        <img src="assets/media/stomach-ache.png" alt="Stomach Ache">
-                        <p>পেট ব্যাথা</p>
+                        <img src="assets/media/sleep.png" alt="Stomach Ache">
+                        <p>ঘুম</p>
                     </div>
                     <div class="feeling-item section-item-items">
-                        <img src="assets/media/cough.png" alt="Cough">
-                        <p>কাশি</p>
+                        <img src="assets/media/washroom.png" alt="Cough">
+                        <p>ওয়াশরুম</p>
                     </div>
                     <div class="feeling-item section-item-items">
-                        <img src="assets/media/eye-problem.png" alt="Eye Problem">
-                        <p>দূরদৃষ্টি</p>
+                        <img src="assets/media/mood.png" alt="Eye Problem">
+                        <p>মেজাজ</p>
                     </div>
                     <div class="feeling-item section-item-items">
-                        <img src="assets/media/doctor.png" alt="Consult Doctor">
-                        <p>ডাক্তারের ডাকুন</p>
+                        <img src="assets/media/rest.png" alt="Consult Doctor">
+                        <p>বিশ্রাম</p>
                     </div>
                 </div>
                 <div class="foods-section section-item">
@@ -166,6 +183,36 @@
         <div class="chat-button">
             <button onclick="chat_open_function()">Chat</button>
         </div>
+    </div>
+    <div class="profile">
+        <div class="profile-body">
+            <div class="all-profile-body">
+                <div class="user-profile" onclick="user_profile_loadFunction()">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <p>User One</p>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <p>User Two</p>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/media/add-user.png" alt="">
+                    <p>Add User</p>
+                </div>
+            </div>
+            <div class="user-profile-body">
+                <img src="assets/media/user-profile.png" alt="">
+                <div class="info">
+                    <p><span>Name: </span>User One</p>
+                    <p><span>Age: </span>20</p>
+                    <p><span>Type: </span>Hemiplegia - Cerebral Palsy</p>
+                    <p><span>GMFCS: </span>IV</p>
+                    <p><span>MACS: </span>II</p>
+                    <p><span>Associated Impairement: </span>Speech</p>
+                </div>
+            </div>
+            <img class="profile-cross-button" src="assets/media/cross.png" onclick="all_profile_closeFunction()">
+        </div>        
     </div>
 </body>
 <script src="assets/js/script.js"></script>

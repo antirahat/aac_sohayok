@@ -11,7 +11,7 @@ function loading_function(event) {
 function loading_enter_function(callback) {
     intervalId = setInterval(function() {
         if (progress_value < 100) {
-            progress_value += 20;
+            progress_value += 100;
             progress.style.width = progress_value + "%";            
         } else {
             clearInterval(intervalId);
@@ -50,6 +50,19 @@ function close_pain_scale_function() {
 var symptom = document.querySelectorAll(".symptom-item") ;
 
 symptom.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+        loading_enter_function(pain_scale_function);
+    });
+    item.addEventListener("mousemove", loading_function) ;
+    item.addEventListener("mouseleave", loading_leave_function) ;
+    item.addEventListener("click", () => {
+        pain_scale_function();
+    });
+});
+
+var feeling = document.querySelectorAll(".feeling-item") ;
+
+feeling.forEach((item) => {
     item.addEventListener("mouseenter", () => {
         loading_enter_function(pain_scale_function);
     });
@@ -176,6 +189,21 @@ function speak() {
     } else {
         alert('Sorry, your browser does not support text-to-speech.');
     }
+}
+
+function all_profile_loadFunction() {
+    document.getElementsByClassName("profile")[0].style.transform = "translate(0%, 0%)";
+}
+
+function all_profile_closeFunction() {
+    document.getElementsByClassName("all-profile-body")[0].style.display = "flex" ;
+    document.getElementsByClassName("user-profile-body")[0].style.maxHeight = "0px" ;
+    document.getElementsByClassName("profile")[0].style.transform = "translate(-100%, -100%)";    
+}
+
+function user_profile_loadFunction() {
+    document.getElementsByClassName("all-profile-body")[0].style.display = "none" ;
+    document.getElementsByClassName("user-profile-body")[0].style.maxHeight = "450px" ;
 }
 
 // speak()
