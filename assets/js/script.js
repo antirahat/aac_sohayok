@@ -28,16 +28,17 @@ function loading_leave_function() {
     clearTimeout(intervalId) ;
 }
 
-function pain_scale_function() {
-    var scale = document.getElementsByClassName("pain-scale-part")[0].style ;
-    scale.width = "100%" ;
-    scale.height = "100%" ;
-}
-
 function audio_play_function(path) {
     let audio = new Audio("assets/media/"+path);
     console.log("assets/media/"+path) ;
     audio.play();
+}
+
+function pain_scale_function(path) {
+    audio_play_function(path) ;
+    var scale = document.getElementsByClassName("pain-scale-part")[0].style ;
+    scale.width = "100%" ;
+    scale.height = "100%" ;
 }
 
 function close_pain_scale_function() {
@@ -49,9 +50,9 @@ function close_pain_scale_function() {
 
 var symptom = document.querySelectorAll(".symptom-item") ;
 
-symptom.forEach((item) => {
+symptom.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
-        loading_enter_function(pain_scale_function);
+        loading_enter_function(() => pain_scale_function("medical-"+index+".wav"));
     });
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
@@ -62,9 +63,9 @@ symptom.forEach((item) => {
 
 var feeling = document.querySelectorAll(".feeling-item") ;
 
-feeling.forEach((item) => {
+feeling.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
-        loading_enter_function(pain_scale_function);
+        loading_enter_function(() => pain_scale_function("medical-"+index+".wav"));
     });
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
@@ -77,7 +78,7 @@ var scale = document.querySelectorAll(".scale-item") ;
 
 scale.forEach((item,index) => {
     item.addEventListener("mouseenter", () => {
-        loading_enter_function(() => audio_play_function("audio-"+index+".mp3"));
+        loading_enter_function(() => audio_play_function("scale-"+index+".wav"));
     });
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
@@ -206,12 +207,18 @@ function user_profile_loadFunction() {
     document.getElementsByClassName("user-profile-body")[0].style.maxHeight = "450px" ;
 }
 
+var emergency_audio = new Audio("assets/media/emergency.mp3") ;
+
 function emergency_loadFunction() {
     document.getElementsByClassName("emergency-part")[0].style.transform = "translate(0%, 0%)";
+    emergency_audio.loop = true ;
+    emergency_audio.play();
 }
 
 function emergency_closeFunction() {
     document.getElementsByClassName("emergency-part")[0].style.transform = "translate(-100%, -100%)";
+    emergency_audio.pause() ;
+    emergency_audio.currentTime = 0 ;
 }
 
 var emergency = document.querySelectorAll(".emergency-section-item") ;
