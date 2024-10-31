@@ -57,7 +57,7 @@ symptom.forEach((item, index) => {
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
     item.addEventListener("click", () => {
-        pain_scale_function();
+        pain_scale_function("medical-"+index+".wav")
     });
 });
 
@@ -70,7 +70,7 @@ feeling.forEach((item, index) => {
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
     item.addEventListener("click", () => {
-        pain_scale_function();
+        pain_scale_function("medical-"+index+".wav")
     });
 });
 
@@ -83,7 +83,7 @@ scale.forEach((item,index) => {
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
     item.addEventListener("click", () => {
-        audio_play_function("audio-"+index+".mp3");
+        audio_play_function("scale-"+index+".wav")
     });
 });
 
@@ -91,12 +91,12 @@ var action = document.querySelectorAll(".action-item") ;
 
 action.forEach((item,index) => {
     item.addEventListener("mouseenter", () => {
-        loading_enter_function(() => audio_play_function("chai-"+index+".mp3"));
+        loading_enter_function(() => audio_play_function("chai-"+index+".wav"));
     });
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
     item.addEventListener("click", () => {
-        audio_play_function("chai-"+index+".mp3");
+        audio_play_function("chai-"+index+".wav");
     });
 });
 
