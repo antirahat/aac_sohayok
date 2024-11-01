@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="profile" style="transform: translate(0,0);">
+        <div class="profile-body">
+            <div class="all-profile-body">
+                <div class="user-profile" onclick="user_profile_loadFunction()">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <p>User One</p>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/media/user-profile.png" alt="">
+                    <p>User Two</p>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/media/add-user.png" alt="">
+                    <p>Add User</p>
+                </div>
+            </div>
+            <div class="user-profile-body">
+                <img src="assets/media/user-profile.png" alt="">
+                <div class="info">
+                    <p><span>Name: </span>User One</p>
+                    <p><span>Age: </span>20</p>
+                    <p><span>Type: </span>Hemiplegia - Cerebral Palsy</p>
+                    <p><span>GMFCS: </span>IV</p>
+                    <p><span>MACS: </span>II</p>
+                    <p><span>Associated Impairement: </span>Speech</p>
+                    <a href="mainapp.html"><button>Login</button></a>
+                </div>
+            </div>
+            <img class="profile-cross-button" src="assets/media/cross.png" onclick="all_profile_closeFunction(2)">
+        </div>        
+    </div>
+</body>
+<script src="assets/js/script.js"></script>
+</html>

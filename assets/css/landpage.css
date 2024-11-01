@@ -11,6 +11,7 @@ body {
     color: white;
     position: relative;
     overflow: hidden;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 a {
@@ -24,9 +25,42 @@ main {
     background-color: transparent;
     backdrop-filter: blur(4px);
     display: flex;
+    flex-direction: column;
+    gap: 20px;
     justify-content: center;
     align-items: center;
     z-index: 10;    
+}
+
+main h1 {
+    font-size: 72px;
+}
+
+main p {
+    font-size: 28px;
+}
+
+main h1 {
+    color: rgb(10, 178, 10);    
+}
+
+.second-part {
+    display: flex;
+    gap: 10px;    
+}
+
+.second-part p, .textChanger-part {
+    height: 50px;
+    overflow: hidden;
+}
+
+.textChanger-part .textChanger-body {
+    transition: 0.5s ease-in-out;
+}
+
+.textChanger-part .textChanger-body p{
+    height: 50px;
+    color: rgb(10, 178, 10);    
 }
 
 .effect {

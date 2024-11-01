@@ -196,10 +196,13 @@ function all_profile_loadFunction() {
     document.getElementsByClassName("profile")[0].style.transform = "translate(0%, 0%)";
 }
 
-function all_profile_closeFunction() {
+function all_profile_closeFunction(index) {
+    console.log(index, typeof(index))
     document.getElementsByClassName("all-profile-body")[0].style.display = "flex" ;
     document.getElementsByClassName("user-profile-body")[0].style.maxHeight = "0px" ;
-    document.getElementsByClassName("profile")[0].style.transform = "translate(-100%, -100%)";    
+    if (index === 1) {
+        document.getElementsByClassName("profile")[0].style.transform = "translate(-100%, -100%)";    
+    }
 }
 
 function user_profile_loadFunction() {
