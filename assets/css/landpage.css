@@ -51,16 +51,18 @@ main h1 {
 
 .second-part p, .textChanger-part {
     height: 50px;
-    overflow: hidden;
+    width: auto;
+    overflow: hidden;    
 }
 
 .textChanger-part .textChanger-body {
+    width: auto;
     transition: 0.5s ease-in-out;
 }
 
 .textChanger-part .textChanger-body p{
     height: 50px;
-    color: rgb(10, 178, 10);    
+    color: rgb(10, 178, 10);
 }
 
 .effect {

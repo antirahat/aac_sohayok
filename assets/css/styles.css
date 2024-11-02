@@ -241,8 +241,12 @@ body {
 }
 
 .emergency-section-item img {
-    width: 50px;
+    width: 70px;
     height: auto;
+}
+
+.emergency-section-item p {
+    font-weight: bold;
 }
 
 /* Symptoms Section */
@@ -294,8 +298,12 @@ body {
 } */
 
 .section-item-items img {
-    width: 50px;
+    width: 70px;
     height: auto;
+}
+
+.section-item-items p {
+    font-weight: bold;
 }
 
 /* Actions Section */
@@ -519,6 +527,7 @@ body {
 .profile-body .user-profile img {
     width: 100px;
     aspect-ratio: 1/1;
+    border-radius: 50%;
 }
 
 .profile-cross-button {

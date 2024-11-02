@@ -65,12 +65,12 @@ var feeling = document.querySelectorAll(".feeling-item") ;
 
 feeling.forEach((item, index) => {
     item.addEventListener("mouseenter", () => {
-        loading_enter_function(() => pain_scale_function("medical-"+index+".wav"));
+        loading_enter_function(() => pain_scale_function("feeling-"+index+".wav"));
     });
     item.addEventListener("mousemove", loading_function) ;
     item.addEventListener("mouseleave", loading_leave_function) ;
     item.addEventListener("click", () => {
-        pain_scale_function("medical-"+index+".wav")
+        pain_scale_function("feeling-"+index+".wav")
     });
 });
 
