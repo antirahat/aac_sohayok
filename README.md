@@ -36,20 +36,6 @@ Add your demo image(s) here. Example of **4 images side by side**:
 
 ---
 
-## 📂 Project Structure
-
-aac-shohayok/
-│
-├─ assets/
-│ ├─ css/
-│ ├─ js/
-│ ├─ media/
-│ └─ py/
-│
-├─ index.html
-├─ mainapp.html
-└─ README.md
-
 ---
 
 ## 📌 Usage
