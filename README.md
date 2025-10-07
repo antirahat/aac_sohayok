@@ -29,8 +29,8 @@ Add your demo image(s) here. Example of **4 images side by side**:
 
 <div style="display: flex; gap: 10px;">
 
-  <img src="assets/demo1.png" alt="Demo 1" width="200"/>
-  <img src="assets/demo2.png" alt="Demo 2" width="200"/>
+  <img src="assets/media/demo1.png" alt="Demo 1" width="200"/>
+  <img src="assets/media/demo2.png" alt="Demo 2" width="200"/>
 
 </div>
 
